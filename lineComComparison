@@ -1,24 +1,41 @@
 import java.util.Scanner;
 
-public class LineLength {
+public class LengthCamparison {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        double x1, x2, y1, y2, distance;
 
-        System.out.println("Enter X1 coordinates:");
+        double x1, x2, y1, y2, distance1;
+        double a1, a2, b1, b2, distance2;
+        
+        System.out.println("Line-1: Enter the value for X1 :");
         x1= scan.nextInt();
-        System.out.println("Enter Y1 coordinates:");
+        System.out.println:("Line-1: Enter the value for y1 :");
         y1= scan.nextInt();
-        System.out.println("Enter X2 coordinates:");
+        System.out.println("Line-1: Enter the value for X2 :");
         x2= scan.nextInt();
-        System.out.println("Enter Y2 coordinates:");
+        System.out.println("Line-1: Enter the value for y2 :");
         y2= scan.nextInt();
+
+        System.out.println("Line-2: Enter the value for X1 :");
+        a1= scan.nextInt();
+        System.out.println("Line-2:Enter the value for Y1 :");
+        b1= scan.nextInt();
+        System.out.println("Line-2:Enter the value for X2 :");
+        a2= scan.nextInt();
+        System.out.println("Line-2:Enter the value for Y2 :");
+        b2= scan.nextInt();
         scan.close();
 
+        distance1 = Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
+        System.out.println("The length of line-1 is :"+distance1);
 
-        distance = Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
-        System.out.println("The length of line is :"+distance);
+        distance2 = Math.sqrt((b2 - b1) * (b2 - b1) + (a2 - a1) * (a2 - a1));
+        System.out.println("The length of line-2 is :"+distance2);
 
+        if(distance1 == distance2){
+            System.out.println("The line lengths are equal");}
+        else
+            System.out.println("The line lengths are not equal");
     }
 }
